@@ -1,0 +1,5 @@
+*What happens if users choose “Cancel”? 
+Nếu người dùng chọn "Cancel" thì phương thức showConfirmDialog sẽ trả lời về JOptionPane.CANCEL_OPTION. Do đó mã sẽ hiển thị thông báo "You've choosen: NO".
+*How to customize the options to users, e.g. only two options: “Yes” and “No”, OR “I do” 
+and “I don’t” 
+Để tùy chỉnh theo lựa chọn người dùng thì chúng ta có thể sử dụng có thể sử dụng phương thức showOptionDialog thay vì showConfirmDialog. Phương thức showOptionDialog cho phép chúng chỉ định các tùy chọn nút tùy chỉnh. Đây là cách chúng có thể sửa mã để cung cấp các tùy chọn tùy chỉnh "Yes" và "No" hoặc "I do" và "I don't"
