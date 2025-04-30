@@ -36,16 +36,43 @@ public abstract class AddItemToStoreScreen extends JFrame {
         JMenu menu = new JMenu("Options");
 
         JMenu updateStore = new JMenu("Update Store");
-        updateStore.add(new JMenuItem("Add Book"));
-        updateStore.add(new JMenuItem("Add CD"));
-        updateStore.add(new JMenuItem("Add DVD"));
 
+        JMenuItem addBook = new JMenuItem("Add Book");
+        addBook.addActionListener(e -> {
+            dispose();
+            new AddBookToStoreScreen(store);
+        });
+
+        JMenuItem addCD = new JMenuItem("Add CD");
+        addCD.addActionListener(e -> {
+            dispose();
+            new AddCompactDiscToStoreScreen(store);
+        });
+
+        JMenuItem addDVD = new JMenuItem("Add DVD");
+        addDVD.addActionListener(e -> {
+            dispose();
+            new AddDigitalVideoDiscToStoreScreen(store);
+        });
+
+        updateStore.add(addBook);
+        updateStore.add(addCD);
+        updateStore.add(addDVD);
+
+        JMenuItem viewStore = new JMenuItem("View Store");
+        viewStore.addActionListener(e -> {
+            dispose();
+            new StoreManagerScreen(store);
+        });
+        
+        menu.add(viewStore);
         menu.add(updateStore);
-        menu.add(new JMenuItem("View Store"));
 
         JMenuBar menuBar = new JMenuBar();
         menuBar.setLayout(new FlowLayout(FlowLayout.LEFT));
         menuBar.add(menu);
+
+        setJMenuBar(menuBar);
 
         return menuBar;
     }
