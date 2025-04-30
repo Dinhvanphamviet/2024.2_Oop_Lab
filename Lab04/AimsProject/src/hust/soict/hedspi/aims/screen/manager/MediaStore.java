@@ -39,7 +39,6 @@ public class MediaStore extends JPanel {
             JButton playButton = new JButton("Play");
             container.add(playButton);
 
-            // Thêm sự kiện cho nút Play
             playButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -64,7 +63,6 @@ public class MediaStore extends JPanel {
         Media m = (Media) playableMedia;
         String message = "Playing: " + m.getTitle();
 
-        // Nếu media có độ dài
         if (m instanceof hust.soict.hedspi.aims.media.DigitalVideoDisc) {
             int length = ((hust.soict.hedspi.aims.media.DigitalVideoDisc) m).getLength();
             message += " (" + length + " minutes)";
